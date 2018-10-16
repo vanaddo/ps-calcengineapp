@@ -2,9 +2,10 @@ package com.pluralsight.calcengine;
 
 public class MathEquation {
 
+
   private double leftVal;
   private double rightVal;
-  private char opCode;
+  private char opCode ='a';
   private double result;
 
 
@@ -15,8 +16,22 @@ public class MathEquation {
   public void setRightVal(double rightVal){this.rightVal = rightVal;}
   public char getOpcode() {return opCode;}
   public void setOpCode(char opCode) {this.opCode = opCode;}
+
   public double getResult() {return  result;} //for result since you don't want anyone to modify it you just set the accessor(getter) and not the mutator(setter)
 
+  public MathEquation() {}
+
+  public MathEquation(char opCode){
+
+    this.opCode = opCode;
+  }
+
+  public MathEquation(char opCode, double leftVal, double rightVal){
+
+    this(opCode);
+    this.leftVal = leftVal;
+    this.rightVal = rightVal;
+  }
 
   public void execute(){
 
